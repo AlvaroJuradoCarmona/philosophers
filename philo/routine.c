@@ -27,9 +27,9 @@ static void	check_if_total_meals_eaten(t_philo *philo, t_data *data)
 {
 	if (philo->num_meals == data->total_meals)
 	{
-		pthread_mutex_lock(&data->eaten_mtx);
+		pthread_mutex_lock(&data->total_meals_mtx);
 		data->meals_eaten++;
-		pthread_mutex_unlock(&data->eaten_mtx);
+		pthread_mutex_unlock(&data->total_meals_mtx);
 	}
 }
 

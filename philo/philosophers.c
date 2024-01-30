@@ -12,6 +12,20 @@
 
 #include "philosophers.h"
 
+static void	check_philos_states(t_data *data)
+{
+	t_philo	*aux;
+
+	aux = data->philos;
+	while (!check_death(aux) && !meals_eaten(data))
+	{
+		if (aux->next)
+			aux = aux->next;
+		else
+			aux = data->philos;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_data	data;
