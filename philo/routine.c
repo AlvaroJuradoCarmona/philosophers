@@ -69,7 +69,7 @@ void	*routine(void *philo_data)
 	philo = (t_philo *) philo_data;
 	data = philo->data;
 	if (!philo->next)
-		next_philo = data->philos;
+		next_philo = data->philo;
 	else
 		next_philo = philo->next;
 	if (philo->id % 2)

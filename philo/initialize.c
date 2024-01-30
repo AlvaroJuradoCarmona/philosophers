@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "philosophers.h"
+
 static void	ft_lstadd_back(t_philo **lst, t_philo *new)
 {
 	t_philo	*p;
@@ -44,7 +46,7 @@ static int	initialize_philo(t_data *data)
 		if (pthread_mutex_init(&aux->fork, NULL)
 			|| pthread_create(&aux->thread, NULL, &routine, aux))
 			return (0);
-		ft_lstadd_back(&data->philos, aux);
+		ft_lstadd_back(&data->philo, aux);
 	}
 	return (1);
 }

@@ -34,18 +34,18 @@ void	free_all(t_data *data)
 		pthread_mutex_destroy(&data->total_meals_mtx);
 	if (data->dead_mtx)
 		pthread_mutex_destroy(&data->dead_mtx);
-	tmp = data->philos;
-	while (tmp)
+	aux = data->philo;
+	while (aux)
 	{
-		if (tmp->thread)
-			pthread_detach(tmp->thread);
-		if (tmp->fork)
-			pthread_mutex_destroy(tmp->fork);
-		tmp = tmp->next;
+		if (aux->thread)
+			pthread_detach(&aux->thread);
+		if (aux->fork)
+			pthread_mutex_destroy(&aux->fork);
+		aux = aux->next;
 	}
-	ft_lstclear_philos(&data->philos);
-	if (data->philos)
-		free(data->philos);
+	ft_lstclear_philos(&data->philo);
+	if (data->philo)
+		free(data->philo);
 	if (data)
 		free(data);
 }
