@@ -12,7 +12,7 @@
 
 #include "philosophers.h"
 
-void	ft_lstclear_philos(t_philo **philo)
+static void	ft_lstclear_philos(t_philo **philo)
 {
 	t_philo	*next;
 

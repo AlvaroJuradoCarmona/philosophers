@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstadd_back(t_philo **lst, t_philo *new)
+static void	ft_lstadd_back(t_philo **lst, t_philo *new)
 {
 	t_philo	*p;
 

@@ -51,4 +51,17 @@ typedef struct s_philo
 	t_philo			*next;
 }	t_philo;
 
+int		init_data(int argc, char **argv, t_data *data);
+int		valid_args(int argc, char **argv);
+long	ft_atol(char *str);
+int		init_data(int argc, char **argv, t_data *data);
+void	free_all(t_data *data);
+void	*routine(void *philo_data);
+int		philo_died(t_data *data);
+int		get_time(void);
+void	print_status(t_philo *philo, char *str);
+int		meals_eaten(t_data *data);
+int		check_death(t_philo *philo);
+void	ft_sleep(int ms);
+
 #endif
