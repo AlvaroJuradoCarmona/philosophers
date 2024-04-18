@@ -6,7 +6,7 @@
 /*   By: ajurado- <ajurado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:04:40 by ajurado-          #+#    #+#             */
-/*   Updated: 2024/02/01 17:53:05 by ajurado-         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:43:57 by ajurado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 
 typedef struct s_philo
 {
-	void			*table;
-	pthread_t		soul;
 	int				id;
-	int				left_f;
-	int				right_f;
+	int				l_fork;
+	int				r_fork;
 	int				last_eat;
 	int				eat_count;
-	pthread_mutex_t	*to_check;
+	void			*table;
+	pthread_t		thread;
+	pthread_mutex_t	*checker_mtx;
 }	t_philo;
 
 typedef struct s_table
@@ -42,7 +42,7 @@ typedef struct s_table
 	int				n_eat;
 	long long		init_time;
 	int				dead;
-	pthread_mutex_t	to_check;
+	pthread_mutex_t	checker_mtx;
 	pthread_mutex_t	*forks;
 	pthread_t		checker;
 	t_philo			*philo;
